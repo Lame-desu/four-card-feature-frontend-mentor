@@ -1,0 +1,130 @@
+:root {
+  --clr-red: hsl(0, 78%, 62%);
+  --clr-cyan: hsl(180, 62%, 55%);
+  --clr-orange: hsl(34, 97%, 64%);
+  --clr-blue: hsl(212, 86%, 64%);
+
+  --clr-grey-500: hsl(234, 12%, 34%);
+  --clr-grey-400: hsl(212, 6%, 44%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --font-body-size: 15px;
+  --font-family: "Poppins", sans-serif;
+
+  --fw-light: 200;
+  --fw-normal: 400;
+  --fw-bold: 600;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-body-size);
+  color: var(--clr-grey-400);
+  font-weight: var(--fw-normal);
+  background-color: var(--clr-white);
+  padding: 3rem 1rem;
+}
+
+main {
+  max-width: 21.875rem;
+  margin-inline: auto;
+}
+
+.introduction {
+  text-align: center;
+}
+
+.introduction h1 {
+  font-weight: var(--fw-light);
+}
+
+.introduction h2 {
+  color: var(--clr-grey-500);
+}
+
+article:nth-child(1) {
+  grid-area: supervisor;
+  border-color: var(--clr-cyan);
+}
+
+article:nth-child(2) {
+  grid-area: team-builder;
+  border-color: var(--clr-red);
+}
+article:nth-child(3) {
+  grid-area: karma;
+  border-color: var(--clr-orange);
+}
+article:nth-child(4) {
+  grid-area: calculator;
+  border-color: var(--clr-blue);
+}
+
+.services {
+  margin-top: 4rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+    "supervisor"
+    "team-builder"
+    "karma"
+    "calculator";
+}
+
+article {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  box-shadow: 0 10px 10px rgb(0, 0, 0, 0.1);
+  border-top: 5px solid green;
+}
+
+article img {
+  max-width: 80px;
+  align-self: flex-end;
+}
+
+@media (min-width: 1024px) {
+  .introduction {
+    max-width: 34rem;
+    margin-inline: auto;
+  }
+  main {
+    max-width: 76.5rem;
+    margin-inline: auto;
+  }
+
+  .services {
+    grid-template-areas:
+      ". team-builder ."
+      "supervisor team-builder calculator"
+      "supervisor karma calculator"
+      ". karma .";
+  }
+}
