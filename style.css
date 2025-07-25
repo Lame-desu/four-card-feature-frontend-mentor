@@ -111,6 +111,10 @@ article img {
 }
 
 @media (min-width: 1024px) {
+  h1,
+  h2 {
+    font-size: 2rem;
+  }
   .introduction {
     max-width: 34rem;
     margin-inline: auto;
